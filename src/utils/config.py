@@ -25,3 +25,19 @@ class Config:
             "AZURE_STORAGE_CONNECTION_STRING"
         )
     )
+
+    AZURE_SQL_SERVER = os.getenv(
+    "AZURE_SQL_SERVER"
+    )
+
+    AZURE_SQL_DATABASE = os.getenv(
+        "AZURE_SQL_DATABASE"
+    )
+
+    AZURE_SQL_USERNAME = os.getenv(
+        "AZURE_SQL_USERNAME"
+    )
+
+    AZURE_SQL_PASSWORD = os.getenv(
+        "AZURE_SQL_PASSWORD"
+    )
