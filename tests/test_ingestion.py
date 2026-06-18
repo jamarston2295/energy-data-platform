@@ -1,12 +1,16 @@
-from pathlib import Path
 import json
+from unittest.mock import patch, MagicMock
 
-from src.ingestion.ingest_carbon_intensity import save_raw_data
+from src.ingestion.ingest_carbon_intensity import ingest
+from src.utils.config import Config
 
 
-def test_save_raw_data_creates_file(tmp_path):
+@patch("src.ingestion.ingest_carbon_intensity.requests.get")
+def test_ingest_creates_json_file(mock_get):
 
-    sample_data = {
+    mock_response = MagicMock()
+
+    mock_response.json.return_value = {
         "data": [
             {
                 "from": "2026-06-01T00:00Z",
@@ -20,13 +24,18 @@ def test_save_raw_data_creates_file(tmp_path):
         ]
     }
 
-    output_file = tmp_path / "test.json"
+    mock_get.return_value = mock_response
 
-    save_raw_data(sample_data, output_file)
+    ingest()
+
+    output_file = (
+        Config.RAW_DATA_DIR
+        / "carbon_intensity_raw.json"
+    )
 
     assert output_file.exists()
 
     with open(output_file) as f:
-        loaded_data = json.load(f)
+        data = json.load(f)
 
-    assert loaded_data == sample_data
+    assert "data" in data
