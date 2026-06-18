@@ -28,6 +28,11 @@ def ingest():
         / "carbon_intensity_raw.json"
     )
 
+    Config.RAW_DATA_DIR.mkdir(
+        parents=True,
+        exist_ok=True
+    )
+
     with open(
         output_file,
         "w"

@@ -24,6 +24,11 @@ def transform():
         f"Reading {latest_file.name}"
     )
 
+    Config.PROCESSED_DATA_DIR.mkdir(
+        parents=True,
+        exist_ok=True
+    )
+
     with open(latest_file) as file:
         data = json.load(file)
 
