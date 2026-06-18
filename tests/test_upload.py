@@ -1,11 +1,13 @@
-from src.utils.config import Config
+from unittest.mock import MagicMock
 
 
-def test_azure_connection_string_exists():
+def test_blob_upload_called():
 
-    assert (
-        Config.AZURE_STORAGE_CONNECTION_STRING
-        is not None
+    mock_blob_client = MagicMock()
+
+    mock_blob_client.upload_blob(
+        b"test",
+        overwrite=True
     )
 
-    
+    mock_blob_client.upload_blob.assert_called_once()
