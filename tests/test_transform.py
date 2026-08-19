@@ -43,3 +43,22 @@ def test_transform_creates_parquet():
     assert len(df) == 1
 
     assert "forecast_intensity" in df.columns
+
+def test_transform_has_expected_columns():
+
+    output_file = (
+        Config.PROCESSED_DATA_DIR
+        / "carbon_intensity.parquet"
+    )
+
+    df = pd.read_parquet(output_file)
+
+    expected_columns = {
+        "from_time",
+        "to_time",
+        "forecast_intensity",
+        "actual_intensity",
+        "intensity_index"
+    }
+
+    assert set(df.columns) == expected_columns
