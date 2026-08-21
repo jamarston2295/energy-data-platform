@@ -1,9 +1,10 @@
 import json
+from datetime import UTC, datetime, timedelta
+
 import requests
 
 from src.utils.config import Config
 from src.utils.logger import get_logger
-from datetime import datetime, timedelta, UTC
 
 logger = get_logger(__name__)
 

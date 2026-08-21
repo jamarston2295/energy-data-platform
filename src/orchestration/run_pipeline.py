@@ -1,13 +1,12 @@
 from src.ingestion.ingest_carbon_intensity import ingest
-from src.transformation.transform_carbon_intensity import transform
-from src.loading.upload_to_blob import upload_processed_data
 from src.loading.load_to_sql import (
-    get_engine,
-    create_table,
     clear_table,
-    load_parquet_to_sql
+    create_table,
+    get_engine,
+    load_parquet_to_sql,
 )
-
+from src.loading.upload_to_blob import upload_processed_data
+from src.transformation.transform_carbon_intensity import transform
 from src.utils.logger import get_logger
 
 logger = get_logger(__name__)

@@ -3,10 +3,10 @@ from unittest.mock import MagicMock, patch
 import pandas as pd
 
 from src.loading.load_to_sql import (
-    get_engine,
+    clear_table,
     create_table,
+    get_engine,
     load_parquet_to_sql,
-    clear_table
 )
 from src.utils.config import Config
 

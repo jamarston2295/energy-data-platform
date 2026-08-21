@@ -5,7 +5,6 @@ import pandas as pd
 from src.transformation.transform_carbon_intensity import transform
 from src.utils.config import Config
 
-
 SAMPLE_DATA = {
     "data": [
         {

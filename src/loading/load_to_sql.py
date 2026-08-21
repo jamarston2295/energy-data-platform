@@ -1,8 +1,7 @@
-from sqlalchemy import create_engine
-from src.utils.config import Config
-from sqlalchemy import text
-
 import pandas as pd
+from sqlalchemy import create_engine, text
+
+from src.utils.config import Config
 from src.utils.logger import get_logger
 
 logger = get_logger(__name__)
