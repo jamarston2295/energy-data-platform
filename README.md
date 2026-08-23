@@ -193,7 +193,8 @@ Energy Data Platform/
 │       └── ci.yml
 │
 ├── docs/
-│   └── architecture.png
+│   └── Architecture.jpg
+│   └── Power_BI.png
 │
 ├── src/
 │   ├── ingestion/
@@ -219,7 +220,11 @@ Energy Data Platform/
 │   ├── test_upload.py
 │   └── test_load_to_sql.py
 │
+├── powerbi/
+│   ├── energy_data_monitoring.pbix
+|
 ├── .gitignore
+├── .env
 ├── README.md
 └── requirements.txt
 ```
