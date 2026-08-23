@@ -18,6 +18,8 @@ The platform retrieves carbon intensity data from the UK Carbon Intensity API an
 6. Visualisation – Power BI connects to the SQL data to provide a monitoring dashboard.
 7. Testing and CI – unit tests validate the pipeline components, with GitHub Actions automatically running Ruff and pytest.
 
+<img src="docs/Architecture_Diagram.png" alt="Architecture Diagram">
+
 The pipeline can also retrieve historical data, allowing multiple days of carbon intensity data to be processed and analysed.
 
 ## Data Pipeline
