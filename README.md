@@ -102,6 +102,7 @@ The individual pipeline stages are combined using the orchestration script:
 src/orchestration/run_pipeline.py
 ```
 
+```text
 This coordinates:
 
 Ingestion
@@ -111,6 +112,7 @@ Transformation
 Azure Blob Storage
     ↓
 Azure SQL
+```
 
 This provides a single entry point for running the complete data pipeline.
 
@@ -249,7 +251,10 @@ python -m venv .venv
 ```
 
 ### 2. Install dependencies
+
+```text
 pip install -r requirements.txt
+```
 
 ### 3. Configure environment variables
 
