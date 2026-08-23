@@ -128,6 +128,8 @@ The Power BI file is included in the repository and provides the analytical laye
 
 The dashboard demonstrates how the output of a data engineering pipeline can be made available to end users for monitoring and analysis.
 
+<img src="docs/Power_BI.png" alt="Screenshot of the Power BI Carbon Intensity Monitoring Dashboard">
+
 ## Testing
 
 The project includes unit tests covering the main pipeline components.
